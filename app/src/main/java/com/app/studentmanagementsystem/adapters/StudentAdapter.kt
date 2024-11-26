@@ -4,9 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.studentmanagementsystem.databinding.BottomSheetDialogLayoutBinding
 import com.app.studentmanagementsystem.databinding.ItemStudentBinding
 import com.app.studentmanagementsystem.models.User
 import com.app.studentmanagementsystem.models.Users
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class StudentAdapter(
     private val context: Context,
@@ -39,6 +41,16 @@ class StudentAdapter(
 
         holder.binding.ivDelete.setOnClickListener {
             onDelete?.invoke(student.id)
+        }
+
+        holder.binding.studentItem.setOnClickListener {
+            val dialog = BottomSheetDialog(context)
+            val dialogBinding = BottomSheetDialogLayoutBinding.inflate(LayoutInflater.from(context))
+            dialog.setContentView(dialogBinding.root)
+            dialogBinding.tvName.text = student.name
+            dialogBinding.tvEmail.text = student.email
+            dialogBinding.tvMobile.text = student.mobile
+            dialog.show()
         }
     }
 
