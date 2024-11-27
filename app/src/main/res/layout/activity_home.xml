@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
-
     tools:context=".HomeActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#6C63FF"
         app:title="STUDENTS"
-        app:titleTextColor="@color/white"
-        android:background="#6C63FF" />
+        app:titleTextColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,11 +32,12 @@
 
     <Button
         android:id="@+id/btn_logout"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#6C63FF"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="8dp"
         android:layout_marginBottom="8dp"
+        android:backgroundTint="#6C63FF"
         android:text="Logout" />
 
 </RelativeLayout>
